@@ -1,0 +1,56 @@
+.mainButton {
+  background: none;
+  border: 2px solid var(--primary);
+  width: fit-content;
+  padding: 10px 35px;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  transition: all .2s ease-in;
+}
+
+.btnText {
+  color: var(--primary);
+  font-size: var(--secondaryText);
+  font-weight: 800;
+  transition: all .3s ease-in;
+}
+
+.banner {
+  position: absolute;
+  height: 500%;
+  background-color: var(--primary);
+  width: 160%;
+  top: -140%;
+  left: -170%;
+  transition: all .3s ease-in;
+  z-index: -1;
+  transform: rotate(-35deg);
+  display: flex;
+}
+
+.mainButton::before {
+  content: "";
+  position: absolute;
+  background-color: var(--primary);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  transition: transform .2s ease-in;
+  transform-origin: bottom right;
+}
+
+.mainButton:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+.mainButton:hover > .btnText {
+  color: var(--bgColor);
+  transform: scale(1.1);
+}
+

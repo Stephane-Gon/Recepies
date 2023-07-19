@@ -1,0 +1,89 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.button {
+  border: 1px solid var(--accent);
+  background-color: var(--bgColor);
+  color: var(--accent);
+  font-size: var(--title6);
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.button:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--bgColor)
+}
+
+.inputWrapper {
+  width: 100%;
+  color: var(--accent);
+  position: relative;
+}
+
+.myInput {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid var(--accent);
+  background-color: transparent;
+  color: var(--accent);
+  font-size: var(--title6);
+  transition: all .2s ease-in-out;
+  outline: none;
+  box-shadow: inset 2px 2px 3px 2px rgba(0, 0, 0, 0.353);
+}
+.activeMyInput {
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.myLabel {
+  font-size: var(--title5);
+  position: absolute;
+  left: 2%;
+  top: 30%;
+  cursor: text;
+  transition: all .2s ease-in-out;
+}
+
+.activeMyLabel {
+  font-size: var(--title6);
+  top: -25%;
+}
+
+.borderOverlap {
+  position: absolute;
+  left: 1%;
+  width: 180px;
+  height: 1px;
+  background-color: var(--bgColor);
+  opacity: 0;
+  transition: all .15s ease-in-out;
+}
+
+.activeOverlap {
+  opacity: 1;
+}
+
+.myInput:focus {
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.inputWrapper:hover > .myLabel {
+  font-size: var(--title6);
+  top: -25%;
+} 
+ 
+.inputWrapper:hover > .myInput {
+  border-radius: 5px;
+  box-shadow: none;
+} 
+
+.inputWrapper:hover > .borderOverlap {
+  opacity: 1;
+} 

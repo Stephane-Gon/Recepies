@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --danger: #e55353;
+  --warning: #f9b115;
+  --primary: #51bc51;
+  --secondary: #38473c;
+  --ternary: #4fb067;
+  --accent: #b5f2c4;
+  --lightColor: #ebedef;
+  --gray1Color: #A09B8C;
+  --gray2Color: #5B5A56;
+  --gray3Color: #3C3C41;
+  --gray4Color: #1E2328;
+  --gray5Color: #1E282D;
+  --text1Color: #b8ffc9;
+  --bgColor: #212121;
+
+  --pText : 1rem;
+  --secondaryText: 0.875rem;
+  --title1: 3.125rem;
+  --title2: 2.625rem;
+  --title3: 2.25rem;
+  --title4: 1.75rem;
+  --title5: 1.5rem;
+  --title6: 1.25rem;
+
+  --mainFont: 'Josefin Slab', serif;
+  --headingFont: 'Josefin Sans', sans-serif;
+}

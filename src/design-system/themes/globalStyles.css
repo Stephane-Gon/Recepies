@@ -1,0 +1,17 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text1Color);
+  font-family: var(--mainFont);
+}
+
+body {
+  background-color: var(--bgColor);
+}
+
+h1, h2, h3 {
+  font-family: var(--headingFont);
+
+}

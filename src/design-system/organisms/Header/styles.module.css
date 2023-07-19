@@ -1,0 +1,35 @@
+.navbar {
+  padding: 15px 80px;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+.logoBox {
+  justify-self: start;
+}
+
+
+.navbarLinks {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  justify-content: space-between;
+  width: 60%;
+  padding-inline: 10px;
+  /* gap: 40%; */
+}
+
+.navbarLink {
+  text-decoration: none;
+  font-size: var(--pText);
+  font-family: var(--mainFont);
+  font-weight: 600;
+}
+
+.navbarLink:hover {
+  transform: scale(1.1);
+  color: var(--primary);
+}
+
+.navbarAuthBox {
+  justify-self: end;
+}
