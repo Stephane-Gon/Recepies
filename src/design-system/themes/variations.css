@@ -5,10 +5,10 @@
   --black: #000000;
   --danger: #e55353;
   --warning: #f9b115;
-  --primary: #51bc51;
-  --secondary: #38473c;
-  --ternary: #4fb067;
-  --accent: #b5f2c4;
+  --darkGreen: #2a4f48;
+  --green: #4fa35f;
+  --primary: #feb028;
+  --secondary: #229288;
   --lightColor: #ebedef;
   --gray1Color: #A09B8C;
   --gray2Color: #5B5A56;
@@ -26,7 +26,4 @@
   --title4: 1.75rem;
   --title5: 1.5rem;
   --title6: 1.25rem;
-
-  --mainFont: 'Josefin Slab', serif;
-  --headingFont: 'Josefin Sans', sans-serif;
 }

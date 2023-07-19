@@ -4,11 +4,24 @@
   padding: 0;
   box-sizing: border-box;
   color: var(--text1Color);
-  font-family: var(--mainFont);
 }
 
 body {
-  background-color: var(--bgColor);
+  background-image: linear-gradient(
+    0deg,
+    hsl(131deg 35% 47%) 0%,
+    hsl(139deg 38% 44%) 15%,
+    hsl(145deg 41% 40%) 24%,
+    hsl(150deg 43% 37%) 33%,
+    hsl(154deg 45% 34%) 45%,
+    hsl(158deg 45% 31%) 55%,
+    hsl(161deg 43% 29%) 66%,
+    hsl(164deg 40% 27%) 78%,
+    hsl(166deg 36% 25%) 91%,
+    hsl(169deg 31% 24%) 100%
+    );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1, h2, h3 {
