@@ -1,35 +1,30 @@
 .navbar {
-  padding: 15px 80px;
   display: grid;
-  grid-template-columns: 20% 60% 20%;
-}
-.logoBox {
-  justify-self: start;
-}
-
-
-.navbarLinks {
-  display: flex;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  justify-self: center;
+  padding: 40px 100px;
+}
+
+.links  {
+  display: flex;
   justify-content: space-between;
-  width: 60%;
-  padding-inline: 10px;
-  /* gap: 40%; */
+  align-items: center;
+  height: 100%;
+
 }
 
-.navbarLink {
+.link,  .logo {
   text-decoration: none;
-  font-size: var(--pText);
-  font-family: var(--mainFont);
-  font-weight: 600;
+  color: var(--white);
 }
 
-.navbarLink:hover {
-  transform: scale(1.1);
-  color: var(--primary);
+.logo {
+  margin: 0 auto;
 }
 
-.navbarAuthBox {
-  justify-self: end;
+.point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: var(--primary);
 }
