@@ -1,0 +1,27 @@
+.sliderDots {
+  display: flex !important;
+  gap: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 5%;
+  z-index: 1;
+  margin: 50px auto 0 auto;
+}
+.sliderDots li {
+  list-style: none;
+  cursor: pointer;
+}
+.sliderDots li button {
+  background-color: var(--text1Color);
+  border: none;
+  color: transparent;
+  width: 40px;
+  height: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.sliderDots li.slick-active button {
+  background-color: var(--primary);
+}
