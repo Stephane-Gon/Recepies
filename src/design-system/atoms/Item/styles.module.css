@@ -1,0 +1,14 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  text-align: end;
+  border-right: 2px solid transparent;
+  padding-right: 10px;
+}
+
+
+.textOrange {
+  color: var(--primary);
+}

@@ -50,7 +50,7 @@
 
 
 .mainButton:hover > .btnText {
-  color: var(--bgColor);
+  color: var(--gray5Color);
   transform: scale(1.1);
 }
 

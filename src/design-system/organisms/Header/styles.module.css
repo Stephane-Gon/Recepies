@@ -13,9 +13,33 @@
 
 }
 
+.linkWrapper {
+  position: relative;
+}
+
 .link,  .logo {
   text-decoration: none;
   color: var(--white);
+}
+
+.link:before {
+  content: "";
+  position: absolute;
+  width: 5%;
+  height: 2px;
+  display: block;
+  transition: all 0.3s ease;
+  bottom: -15%;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+.link:hover:before {
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
 }
 
 .logo {
@@ -23,8 +47,8 @@
 }
 
 .point {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   border-radius: 50px;
   background-color: var(--primary);
 }

@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 const NavBarLogo = () => {
   return (
     <Link href="#" className={styles.logo}>
-      RECEPIES
+      RECEPIES LOGO
     </Link>
   )
 }

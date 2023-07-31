@@ -1,0 +1,28 @@
+.mainCardWrapper {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.leftContent, .rightContent {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  gap: 20px;
+  width: 30%;
+}
+
+.rightContent {
+  align-items: left;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.mainCardImg img {
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.215) ;
+}

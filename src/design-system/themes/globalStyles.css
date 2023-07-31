@@ -28,3 +28,8 @@ h1, h2, h3 {
   font-family: var(--headingFont);
 
 }
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
