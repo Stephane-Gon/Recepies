@@ -2,9 +2,13 @@ import Link from 'next/link'
 
 import styles from './styles.module.css'
 
-const NavBarLogo = () => {
+interface NavBarLogoProps {
+  link: string
+}
+
+const NavBarLogo = (props: NavBarLogoProps) => {
   return (
-    <Link href="#" className={styles.logo}>
+    <Link href={props.link} className={styles.logo}>
       RECEPIES LOGO
     </Link>
   )
