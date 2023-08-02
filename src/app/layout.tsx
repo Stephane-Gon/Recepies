@@ -24,7 +24,7 @@ export default function RootLayout({
           <NavBar.Links>
             <NavBar.Link text='ABOUT' link="/about"/>
             <NavBar.Point />
-            <NavBar.Link text='RECEPIES' link="#"/>
+            <NavBar.Link text='RECEPIES' link="/recepies"/>
             <NavBar.Point />
           </NavBar.Links>
           <NavBar.Logo link='/' />

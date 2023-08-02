@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 interface InitialProps {
   id: string,
   label: string,
-  onChange?: Function
+  onChange?: (value: string) => void
 }
 
 const SearchInput = (props: InitialProps) => {
