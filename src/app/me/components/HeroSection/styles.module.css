@@ -1,0 +1,24 @@
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper h1 {
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+.wrapper li {
+  font-size: 1.1rem;
+}
+
+.wrapper h3 {
+  margin-block: 30px 20px;
+  font-size: 1.3rem;
+}
+
+.wrapper ol {
+  margin-left: 40px;
+}
