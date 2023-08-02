@@ -1,4 +1,3 @@
-import styles from './styles.module.css'
 import { Recepies } from "@/types/recepies"
 import { getRecepie } from '@/api/Recepies/calls'
 
@@ -13,7 +12,7 @@ export default async function Home() {
   const nextRecepies = featuredRecepies.hits.slice(4, 9)
 
   return (
-    <main className={styles.main}>
+    <main className="main">
       <HeroSection data={first3Recepies} />
       <SecondSection data={nextRecepies} />
     </main>

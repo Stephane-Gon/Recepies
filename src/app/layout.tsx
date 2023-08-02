@@ -22,15 +22,15 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavBar.Root>
           <NavBar.Links>
-            <NavBar.Link text='ABOUT' link="#"/>
+            <NavBar.Link text='ABOUT' link="/about"/>
             <NavBar.Point />
             <NavBar.Link text='RECEPIES' link="#"/>
             <NavBar.Point />
           </NavBar.Links>
-          <NavBar.Logo />
+          <NavBar.Logo link='/' />
           <NavBar.Links>
             <NavBar.Point />
-            <NavBar.Link text='ME' link="#"/>
+            <NavBar.Link text='ME' link="/me"/>
             <NavBar.Point />
             <NavBar.Link text='GALLERY' link="#"/>
           </NavBar.Links>
