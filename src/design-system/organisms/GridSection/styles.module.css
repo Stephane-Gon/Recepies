@@ -1,0 +1,31 @@
+.root {
+  margin-block: 50px;
+}
+
+.grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.item {
+  width: 100%;
+}
+
+.item img {
+  filter: drop-shadow(2px 2px 3px 4px rgba(0, 0, 0, 0.194));
+  border-radius: .4rem .4rem 0px 0px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 10px;
+  background-color: var(--text1Color);
+  border-radius: 0px 0px .4rem .4rem;
+  min-height: 150px;
+}
+
+.content h3 {
+  color: var(--gray5Color);
+}
