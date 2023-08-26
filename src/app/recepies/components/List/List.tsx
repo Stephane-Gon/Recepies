@@ -12,9 +12,7 @@ interface InitialProps {
 }
 
 const List = ({ data }: InitialProps) => {
-  console.log("🚀 ~ file: List.tsx:15 ~ List ~ props:", data?.hits)
   const router = useRouter();
-
   
   return (
     <div className={styles.wrapper}>
@@ -34,7 +32,8 @@ const List = ({ data }: InitialProps) => {
                     data.hits.map((item: Hit, idx) => (
                       <GridSection.Item 
                         key={`resultItem-${idx}-${item.recipe.label}`}
-                        item={item.recipe}
+                        recepi={item.recipe}
+                        links={item._links}
                       />
                     ))
                   }

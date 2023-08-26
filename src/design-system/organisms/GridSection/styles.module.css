@@ -11,21 +11,48 @@
 
 .item {
   width: 100%;
+  position: relative;
+  cursor: pointer;
 }
 
 .item img {
   filter: drop-shadow(2px 2px 3px 4px rgba(0, 0, 0, 0.194));
   border-radius: .4rem .4rem 0px 0px;
-  cursor: pointer;
+}
+
+.item:hover .content {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   padding: 10px;
   background-color: var(--text1Color);
-  border-radius: 0px 0px .4rem .4rem;
-  min-height: 150px;
+  color: white;
+  transform: translateY(110%); /* Initially hidden below */
+  transition: all 0.3s;
+  opacity: 0;
 }
 
 .content h3 {
   color: var(--gray5Color);
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  text-align: end;
+  border-right: 2px solid transparent;
+  padding: 5px 10px;
+}
+
+.iconBox h2,
+.iconBox h5 {
+  color: var(--bgColor);
 }

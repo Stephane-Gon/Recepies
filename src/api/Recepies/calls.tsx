@@ -1,4 +1,4 @@
-import { Recepies } from "@/types/recepies"
+import { Recepies, Hit } from "@/types/recepies"
 
 export const getRecepie = async (text: string): Promise<Recepies> => {
 
@@ -15,6 +15,24 @@ export const getRecepie = async (text: string): Promise<Recepies> => {
     throw new Error('failed to fetch recepie')
   }
   const data = await response.json()
+
+  return data
+}
+
+export const getRecipeByID = async (url: string): Promise<Hit> => {
+  const appIdQS = `app_id=${process.env.NEXT_PUBLIC_RECEPIES_API_ID}`
+  const appKeyQS = `app_key=${process.env.NEXT_PUBLIC_RECEPIES_API_KEY}`
+  const appTypeQS = `type=${process.env.NEXT_PUBLIC_RECEPIES_API_TYPE}`
+  
+  const response = await fetch(`${url}?${appIdQS}&${appKeyQS}&${appTypeQS}`, {
+    cache: 'no-store'
+  })
+
+  if(!response.ok) {
+    throw new Error('failed to fetch recepie')
+  }
+  const data = await response.json()
+  console.log("🚀 ~ file: calls.tsx:35 ~ getRecipeByID ~ data:", data)
 
   return data
 }
