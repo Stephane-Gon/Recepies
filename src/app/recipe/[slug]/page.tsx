@@ -1,21 +1,32 @@
 import React from 'react'
-
+//COMPONENTS
+import HeroSection from './components/HeroSection/HeroSection'
+import SecondSection from './components/SecondSection/SecondSection'
+// TYPES
 import { Hit } from "@/types/recepies"
+// API
 import { getRecipeByID } from '@/api/Recepies/calls'
+// STYLES
+import styles from './styles.module.css'
 
 const Recipe = async ({params}: any) => {
-console.log("🚀 ~ file: page.tsx:7 ~ Recipe ~ params:", params)
 
   let data: Promise<Hit>
-  let featuredRecepies: Hit | null = null
+  let featuredRecepie: Hit | null = null
 
   if(params.slug) {
-    // data = getRecipeByID(params.slug)
-    // featuredRecepies = await data
+    data = getRecipeByID(params.slug)
+    featuredRecepie = await data
   }
+
+  const recipe = featuredRecepie?.recipe
+  console.log("🚀 ~ file: page.tsx:15 ~ Recipe ~ featuredRecepies:", featuredRecepie?.recipe)
   
   return (
-    <div>Recipe</div>
+    <div className={styles.wrapper}>
+      <HeroSection recipe={recipe ? recipe : null}/>
+      <SecondSection recipe={recipe ? recipe : null}/>
+    </div>
   )
 }
 

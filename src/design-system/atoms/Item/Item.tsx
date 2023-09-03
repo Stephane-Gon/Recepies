@@ -1,3 +1,4 @@
+'use'
 import React, { ElementType, useState } from 'react'
 
 import styles from './styles.module.css'

@@ -1,0 +1,109 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: start;
+}
+
+.section h1 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.labelsBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.normalLabel {
+  background: var(--text1Color);
+  color: var(--bgColor);
+  border-radius: 1.5rem;
+  padding: .25rem .75rem;
+  box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.298);
+}
+
+
+.cautionLabel {
+  background: var(--lightColor);
+  color: var(--bgColor);
+  border-radius: 1.5rem;
+  padding: .25rem 1.25rem;
+  font-size: 2rem;
+  box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.298);
+}
+
+.ingredientsBox {
+  padding-left: 1rem;
+}
+
+
+.ingredientsBox h3 {
+  font-weight: 400;
+  color: var(--text1Color);
+}
+
+.detailsTable {
+  width: 100%;
+  border: 2px solid var(--primary);
+  border-radius: .5rem;
+  padding: .2rem;
+}
+
+.detailsTable thead tr th {
+  padding: .5rem;
+  background-color: var(--primary);
+  color: var(--bgColor);
+}
+
+.detailsTable thead tr th:nth-child(1) {
+  border-radius: .3rem 0 0 0;
+}
+
+.detailsTable thead tr th:nth-child(5) {
+  border-radius: 0 .3rem 0 0;
+}
+
+.detailsTable tbody tr td {
+  padding: .5rem;
+  background-color: var(--text1Color);
+  color: var(--bgColor);
+  text-align: center;
+  font-weight: 600;
+}
+
+.detailsTable tbody tr td:nth-child(1) {
+  border-radius: 0 0 0 .3rem;
+}
+
+.detailsTable tbody tr td:nth-child(5) {
+  border-radius: 0 0 .3rem 0;
+}
+
+.tableSection {
+  width: 100%;
+}
+
+.tableSection h1 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.nutrientsBox {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  margin-left: 1rem;
+}
+
+.nutrientsBox span {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.nutrientsBox span p {
+  color: var(--lightColor);
+}
