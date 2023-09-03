@@ -20,7 +20,6 @@ const Recipe = async ({params}: any) => {
   }
 
   const recipe = featuredRecepie?.recipe
-  console.log("🚀 ~ file: page.tsx:15 ~ Recipe ~ featuredRecepies:", featuredRecepie?.recipe)
   
   return (
     <div className={styles.wrapper}>

@@ -6,14 +6,15 @@ import styles from './styles.module.css'
 
 type InitialProps = {
   link?: string,
-  text: string
+  text: string,
+  onClick?: () => void
 }
 
 const Button: React.FC<InitialProps> = (props) => {
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <button ref={buttonRef} className={styles.mainButton}>
+    <button onClick={props.onClick} ref={buttonRef} className={styles.mainButton}>
       {
         props.link ? (
           <Link className={styles.link} href={props.link}>{props.text}</Link>
