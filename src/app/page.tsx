@@ -1,5 +1,5 @@
 import { Recepies } from "@/types/recepies"
-import { getRecepie } from '@/api/Recepies/calls'
+import { getRecepie } from '@/calls/recepies/getAll'
 
 import HeroSection from './components/HeroSection/HeroSection'
 import SecondSection from './components/SecondSection/SecondSection'

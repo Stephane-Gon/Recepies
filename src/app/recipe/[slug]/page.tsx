@@ -5,7 +5,7 @@ import SecondSection from './components/SecondSection/SecondSection'
 // TYPES
 import { Hit } from "@/types/recepies"
 // API
-import { getRecipeByID } from '@/api/Recepies/calls'
+import { getRecipeByID } from '@/calls/recepies/getSingle'
 // STYLES
 import styles from './styles.module.css'
 
