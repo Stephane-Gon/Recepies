@@ -24,5 +24,32 @@
 
 .mainCardImg img {
   border-radius: 10px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.215);
+}
+
+.mainCardImageLoader {
+  width: 500px;
+  aspect-ratio: 1;
+  border-radius: 10px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.215) ;
+}
+
+.mainCardItemLoader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  text-align: end;
+  border-right: 2px solid transparent;
+  padding-right: 10px;
+}
+
+.itemIconLoader {
+  border-radius: 50%;
+  width: 70px;
+  aspect-ratio: 1;
+}
+
+.itemTextLoader {
+  width: 200px;
 }
