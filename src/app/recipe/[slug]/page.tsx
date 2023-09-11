@@ -1,4 +1,3 @@
-import React from 'react'
 //COMPONENTS
 import HeroSection from './components/HeroSection/HeroSection'
 import SecondSection from './components/SecondSection/SecondSection'

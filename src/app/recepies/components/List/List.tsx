@@ -2,17 +2,24 @@
 import React from 'react'
 import { useRouter } from 'next/navigation';
 
+import Loading from './Loading';
+
 import { Recepies, Hit } from "@/types/recepies"
 import styles from './styles.module.css'
 import SearchInput from "@/design-system/atoms/SearchInput/SearchInput"
 import { GridSection } from '@/design-system/organisms/GridSection';
 
 interface InitialProps {
-  data?: Recepies | undefined | null
+  data?: Recepies | undefined | null;
+  isLoading?: boolean
 }
 
-const List = ({ data }: InitialProps) => {
+const List = ({ data, isLoading }: InitialProps) => {
   const router = useRouter();
+
+  if (isLoading) {
+    return <Loading />
+  }
   
   return (
     <div className={styles.wrapper}>
