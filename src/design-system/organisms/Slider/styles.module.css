@@ -22,6 +22,11 @@
   z-index: 5;
 }
 
+.imgLoader {
+  width: 350px;
+  aspect-ratio: 1;
+}
+
 .content {
   width: 40%;
   display: flex;
@@ -39,6 +44,13 @@
 .content .linkContent {
   text-decoration: none;
   color: var(--primary);
+}
+
+.contentLoader {
+  margin-left: 1rem;
+}
+.contentLoader h1 {
+  width: 200px;
 }
 
 .sliderDots {
