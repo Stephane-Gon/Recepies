@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import '@/design-system/themes/globalStyles.css'
 import '@/design-system/themes/variations.css'
 import { NavBar } from '@/design-system/organisms/Header'
+import Provider from './Provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,22 +21,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar.Root>
-          <NavBar.Links>
-            <NavBar.Link text='ABOUT' link="/about"/>
-            <NavBar.Point />
-            <NavBar.Link text='RECEPIES' link="/recepies"/>
-            <NavBar.Point />
-          </NavBar.Links>
-          <NavBar.Logo link='/' />
-          <NavBar.Links>
-            <NavBar.Point />
-            <NavBar.Link text='ME' link="/me"/>
-            <NavBar.Point />
-            <NavBar.Auth isLogged={false} />
-          </NavBar.Links>
-        </NavBar.Root>
-        {children}
+        <Provider>
+          <NavBar.Root>
+            <NavBar.Links>
+              <NavBar.Link text='ABOUT' link="/about"/>
+              <NavBar.Point />
+              <NavBar.Link text='RECEPIES' link="/recepies"/>
+              <NavBar.Point />
+            </NavBar.Links>
+            <NavBar.Logo link='/' />
+            <NavBar.Links>
+              <NavBar.Point />
+              <NavBar.Link text='ME' link="/me"/>
+              <NavBar.Point />
+              <NavBar.Auth isLogged={false} />
+            </NavBar.Links>
+          </NavBar.Root>
+          {children}
+        </Provider>
       </body>
     </html>
   )
