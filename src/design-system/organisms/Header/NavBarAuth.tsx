@@ -1,21 +1,30 @@
 'use client'
 import React from 'react'
 import { useRouter } from 'next/navigation';
-import Button from '@/design-system/atoms/Button/Button';
+import type { Session } from 'next-auth';
 
+// Components
+import Button from '@/design-system/atoms/Button/Button';
+// Styles
 import styles from './styles.module.css'
 
 interface NavBarAuthProps {
-  isLogged: boolean;
+  session: Session | null;
 }
 
 
-const NavBarAuth = ({ isLogged }: NavBarAuthProps) => {
+const NavBarAuth =  ({ session }: NavBarAuthProps) => {
   const router = useRouter()
 
-  const text = isLogged ? 'Log out' : 'Log in'
+
+  const handleClick = () => {
+    if(session) {router.push('/api/auth/signout')}
+    router.push('/api/auth/signin')
+  }
+
+  const text = session && session.user?.email ? session.user?.email : 'Log in'
   return (
-    <Button text={text} onClick={() => router.push('/auth/login')}  />
+    <Button text={text} onClick={handleClick}  />
   )
 }
 

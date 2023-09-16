@@ -2,12 +2,16 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { getServerSession } from 'next-auth'
 
+// Styles
 import '@/design-system/themes/globalStyles.css'
 import '@/design-system/themes/variations.css'
+// Components
 import { NavBar } from '@/design-system/organisms/Header'
 import Provider from './Provider'
+// Auth
 import { options } from './api/auth/[...nextauth]/options'
 
+// Fonts
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -39,7 +43,7 @@ export default async function RootLayout({
               <NavBar.Point />
               <NavBar.Link text='ME' link="/me"/>
               <NavBar.Point />
-              <NavBar.Auth isLogged={false} />
+              <NavBar.Auth session={session} />
             </NavBar.Links>
           </NavBar.Root>
           {children}

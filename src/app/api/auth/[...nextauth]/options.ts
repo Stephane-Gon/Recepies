@@ -1,27 +1,31 @@
-import CredentialsProvider from "next-auth/providers/credentials"
 import type { NextAuthOptions } from "next-auth";
-import { FirestoreAdapter } from "@auth/firebase-adapter";
-import { cert } from 'firebase-admin/app'
-
-import { authorize } from "./authorize";
+// Providers
+import GitHubProvider from "next-auth/providers/github";
+import CredentialsProvider from "next-auth/providers/credentials"
 
 const options: NextAuthOptions = {
-  // adapter: FirestoreAdapter({
-  //   credential: cert({
-  //     projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  //     clientEmail: process.env.NEXT_PUBLIC_CLIENT_EMAIL,
-  //     privateKey: process.env.NEXT_PUBLIC_PRIVATE_KEY!.replace(/\\n/g, '\n'),
-  //   }),
-  // }),
   providers: [
-    // CredentialsProvider({
-    //   name: 'Credentials',
-    //   credentials: {
-    //     username: { label: "Username", type: "text", placeholder: "John" },
-    //     password: { label: "Password", type: "password" },
-    //   },
-    //   authorize: (credentials) =>  authorize(credentials),
-    // })
+    GitHubProvider({
+      clientId: process.env.NEXT_PUBLIC_GIT_CLIENT_ID as string,
+      clientSecret: process.env.NEXT_PUBLIC_GIT_CLIENT_SECRET as string
+    }),
+    CredentialsProvider({
+      name: 'Credentials',
+      credentials: {
+        email: { label: "Email", type: "email", placeholder: "john@gmail.com" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        if(!credentials || !credentials.email || !credentials.password) return null
+        
+        const user = { id: "1", username: "stef", email: "stef@gmail.com", password: "1234" }
+
+        if (credentials.email === user.email && credentials.password === user.password) {
+          return user
+        } 
+        return null
+      }
+    })
   ],
   // session: {
   //   strategy: "jwt"
