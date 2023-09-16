@@ -32,7 +32,7 @@ export default function RootLayout({
             <NavBar.Point />
             <NavBar.Link text='ME' link="/me"/>
             <NavBar.Point />
-            <NavBar.Link text='GALLERY' link="#"/>
+            <NavBar.Auth isLogged={false} />
           </NavBar.Links>
         </NavBar.Root>
         {children}
