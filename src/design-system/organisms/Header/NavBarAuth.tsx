@@ -10,11 +10,12 @@ interface NavBarAuthProps {
 }
 
 
-const NavBarAuth = (props: NavBarAuthProps) => {
+const NavBarAuth = ({ isLogged }: NavBarAuthProps) => {
   const router = useRouter()
 
+  const text = isLogged ? 'Log out' : 'Log in'
   return (
-    <Button text="Log in" onClick={() => router.push('/auth/login')}  />
+    <Button text={text} onClick={() => router.push('/auth/login')}  />
   )
 }
 
