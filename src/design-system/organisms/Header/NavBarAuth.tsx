@@ -18,8 +18,10 @@ const NavBarAuth =  ({ session }: NavBarAuthProps) => {
 
 
   const handleClick = () => {
-    if(session) {router.push('/api/auth/signout')}
-    router.push('/api/auth/signin')
+    if(session && session.user) { 
+      return router.push('/api/auth/signout') 
+    } 
+    return router.push('/api/auth/signin')
   }
 
   const text = session && session.user?.email ? session.user?.email : 'Log in'

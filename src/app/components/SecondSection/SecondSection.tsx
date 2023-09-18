@@ -66,8 +66,6 @@ const SecondSection = ({ data }: SecondSectionProps) => {
     }
   };
 
-  console.log(data)
-
   return (
     <div className='wrapper'>
       <Slider {...sliderSettings}>
