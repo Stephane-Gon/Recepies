@@ -9,7 +9,7 @@ import '@/design-system/themes/variations.css'
 import { NavBar } from '@/design-system/organisms/Header'
 import Provider from './Provider'
 // Auth
-import { options } from './api/auth/[...nextauth]/options'
+import { options } from '../api/auth/[...nextauth]/options'
 
 // Fonts
 const inter = Inter({ subsets: ['latin'] })
