@@ -1,21 +1,14 @@
 'use client'
 import React from 'react'
 import { useRouter } from 'next/navigation';
-import type { Session } from 'next-auth';
+import { useSession } from 'next-auth/react';
 
 // Components
 import Button from '@/design-system/atoms/Button/Button';
-// Styles
-import styles from './styles.module.css'
 
-interface NavBarAuthProps {
-  session: Session | null;
-}
-
-
-const NavBarAuth =  ({ session }: NavBarAuthProps) => {
+const NavBarAuth =  () => {
   const router = useRouter()
-
+  const { data: session } = useSession()
 
   const handleClick = () => {
     if(session && session.user) { 

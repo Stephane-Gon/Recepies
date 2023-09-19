@@ -7,9 +7,9 @@ import '@/design-system/themes/globalStyles.css'
 import '@/design-system/themes/variations.css'
 // Components
 import { NavBar } from '@/design-system/organisms/Header'
-import Provider from './Provider'
+import Provider from './context/AuthContext'
 // Auth
-import { options } from '../api/auth/[...nextauth]/options'
+import { options } from './api/auth/[...nextauth]/options'
 
 // Fonts
 const inter = Inter({ subsets: ['latin'] })
@@ -30,7 +30,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Provider session={session}>
+        <Provider>
           <NavBar.Root>
             <NavBar.Links>
               <NavBar.Link text='ABOUT' link="/about"/>
@@ -43,7 +43,7 @@ export default async function RootLayout({
               <NavBar.Point />
               <NavBar.Link text='ME' link="/me"/>
               <NavBar.Point />
-              <NavBar.Auth session={session} />
+              <NavBar.Auth />
             </NavBar.Links>
           </NavBar.Root>
           {children}

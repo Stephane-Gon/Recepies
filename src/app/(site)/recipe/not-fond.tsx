@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import RootLayout from '../layout'
+import RootLayout from '../../layout'
 
 const NotFound = () => {
   return (
