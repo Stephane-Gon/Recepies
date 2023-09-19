@@ -3,10 +3,15 @@ import type { NextAuthOptions } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google";
+// Adaptor
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 // Utils
 import { authorize } from "./authorize";
+// Prisma
+import prisma from '../../../libs/prismadb'
 
 const options: NextAuthOptions = {
+  adapter: PrismaAdapter(prisma),
   providers: [
     GitHubProvider({
       clientId: process.env.NEXT_PUBLIC_GIT_CLIENT_ID as string,
@@ -25,9 +30,9 @@ const options: NextAuthOptions = {
       authorize: (credentials) => authorize(credentials),
     })
   ],
-  // session: {
-  //   strategy: "jwt"
-  // },
+  session: {
+    strategy: "jwt"
+  },
   secret: process.env.NEXT_PUBLIC_PROVIDER_SECRET,
   debug: process.env.NEXT_PUBLIC_NODE_ENV == 'development'
 }
