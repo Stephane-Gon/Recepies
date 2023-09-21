@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { getServerSession } from 'next-auth'
 
 // Styles
 import '@/design-system/themes/globalStyles.css'
@@ -8,8 +7,6 @@ import '@/design-system/themes/variations.css'
 // Components
 import { NavBar } from '@/design-system/organisms/Header'
 import Provider from './context/AuthContext'
-// Auth
-import { options } from './api/auth/[...nextauth]/options'
 
 // Fonts
 const inter = Inter({ subsets: ['latin'] })
@@ -24,8 +21,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
-  const session = await getServerSession(options);
 
   return (
     <html lang="en">
