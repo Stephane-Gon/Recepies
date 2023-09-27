@@ -8,7 +8,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 // Utils
 import { authorize } from "./authorize";
 // Prisma
-import prisma from '../../../libs/prismadb'
+import prisma from '@/libs/prismadb'
 
 const options: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -35,13 +35,9 @@ const options: NextAuthOptions = {
   },
   secret: process.env.NEXT_PUBLIC_PROVIDER_SECRET,
   debug: process.env.NEXT_PUBLIC_NODE_ENV == 'development',
-  // pages: {
-  //   signIn: '/auth/signin',
-  //   signOut: '/auth/signout',
-  //   error: '/auth/error', // Error code passed in query string as ?error=
-  //   verifyRequest: '/auth/verify-request', // (used for check email message)
-  //   newUser: '/auth/new-user' // New users will be directed here on first sign in (leave the property out if not of interest)
-  // }
+  pages: {
+    signIn: '/signIn',
+  }
 }
 
 

@@ -14,10 +14,10 @@ const NavBarAuth =  () => {
     if(session && session.user) { 
       return router.push('/api/auth/signout') 
     } 
-    return router.push('/api/auth/signin')
+    return router.push('/signIn')
   }
 
-  const text = session && session.user?.email ? session.user?.email : 'Log in'
+  const text = session && session.user?.email ? session.user?.email : 'Sign in'
   return (
     <Button text={text} onClick={handleClick}  />
   )
