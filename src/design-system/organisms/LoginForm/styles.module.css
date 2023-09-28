@@ -1,0 +1,60 @@
+.content {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loginForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.myInput {
+  width: 100%;
+  background: none;
+  height: 40px;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+}
+.myInput:focus {
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid var(--primary);
+
+  border-radius: 5px;
+}
+
+.secondaryLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submitBtn {
+  background-color: var(--primary);
+  border: none;
+  padding-block: 10px;
+  color: var(--bgColor);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.secondaryBtn {
+  background-color: var(--text1Color);
+  color: var(--bgColor);
+  padding: 5px 15px;
+  border: none;
+  cursor: pointer;
+}
