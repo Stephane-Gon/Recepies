@@ -1,7 +1,8 @@
-export default async function Register() {
+import RegisterForm from "@/design-system/organisms/RegisterForm"
+
+export default function Register() {
+
   return (
-    <main className="main"> 
-      Register
-    </main>
+    <RegisterForm />
   )
 }
