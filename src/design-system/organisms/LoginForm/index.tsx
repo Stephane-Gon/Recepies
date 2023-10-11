@@ -25,13 +25,14 @@ export default function LoginForm({ callbackUrl, error }: LoginFormProps) {
 
   const loginUser = async (e: any) => {
     e.preventDefault()
-    const res = await signIn('credentials',
-      {...data, redirect: false
+    await signIn('credentials' ,{
+      ...data, 
+      redirect: false
     })
-    
-    if (!res?.error) {
-      router.push(callbackUrl ?? "http://localhost:3000");
-    }
+    .then(() => {
+      alert('User has been logged in!')
+    })
+
   }
 
   return (

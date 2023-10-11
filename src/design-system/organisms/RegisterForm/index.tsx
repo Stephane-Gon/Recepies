@@ -2,8 +2,10 @@
 
 import { useState, SyntheticEvent } from "react"
 import styles from './styles.module.css'
+import { register } from "@/calls/auth/register"
 
 const RegisterForm = () => {
+  const [registerError, setRegisterError] = useState<string>("")
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -13,7 +15,24 @@ const RegisterForm = () => {
 
   const registerUser = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
-    //* Aqui passo a call que vou criar para o register
+    try {
+      setRegisterError('')
+      const res = await register(data)
+      if(res.error) {
+        setRegisterError(res.error)
+      } else {
+        setData({
+          name: '',
+          email: '',
+          password: '',
+          confirmPassword: ''
+        })
+        alert(`New ${res.user.name} user created!`)
+      }
+    } catch(error) {
+      alert('Erroc ocurred!')
+    }
+
   }
 
   return (
@@ -33,7 +52,7 @@ const RegisterForm = () => {
               name="name"
               type="natextme"
               autoComplete="name"
-              value={data.email}
+              value={data.name}
               onChange={e => setData({ ...data, name: e.target.value })}
               required
             />
@@ -82,10 +101,13 @@ const RegisterForm = () => {
               type="password"
               autoComplete="confirm-password"
               required
-              value={data.password}
+              value={data.confirmPassword}
               onChange={e => setData({ ...data, confirmPassword: e.target.value })}
             />
           </div>
+          {
+            registerError && <h5 style={{color: "#ff6666"}}>{registerError}</h5>
+          }
 
           <button className={styles.submitBtn} type="submit">Register</button>
         </form>

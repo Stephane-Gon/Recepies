@@ -1,3 +1,6 @@
+import bcrypt from 'bcrypt';
+// Prisma
+import prisma from '@/libs/prismadb'
 
 type AuthorizeProps = {
   email: string;
@@ -5,12 +8,26 @@ type AuthorizeProps = {
 } | undefined
 
 export const authorize = async (credentials: AuthorizeProps) => {
-  if(!credentials || !credentials.email || !credentials.password) return null
-        
-  const user = { id: "1", username: "stef", email: "stef@gmail.com", password: "1234" }
+  // Check if both inputs where filled
+  if(!credentials || !credentials.email || !credentials.password) {
+    throw new Error('Fields missing.')
+  }
 
-  if (credentials.email === user.email && credentials.password === user.password) {
-    return user
-  } 
-  return null
+  // Check if user exists
+  const user = await prisma.user.findUnique({
+    where: {
+      email: credentials.email
+    }
+  })
+  if(!user || !user?.hashedPassword) {
+    throw new Error('No User Found!')
+  }
+
+  // Check if password is correct
+  const passwordMatch = await bcrypt.compare(credentials.password, user.hashedPassword)
+  if(!passwordMatch) {
+    throw new Error('Incorrect password!')
+  }
+
+  return user
 }

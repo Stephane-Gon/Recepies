@@ -28,11 +28,7 @@ const GridSectionItem = ({ recepi, links }: GridSectionItemProps) => {
 
         if(match) {
           router.push(`/recipe/${match[1]}`)
-        } else {
-          //TODO: Aqui tenho que enviar para uma página de erro;
-          console.log('No ID')
-        }
-
+        } 
       }}
     >
       <Image src={recepi.image} alt={recepi.label} width={0} height={0} sizes='100vw' style={{ width: '100%', height: 'auto' }}/>
